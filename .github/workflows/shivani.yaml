@@ -14,10 +14,12 @@ jobs:
            cat /etc/os-release
            docker --version
            docker compose version
-      - nane: mystep2-clone the repo in current directory
+      - name: mystep2-clone the repo in current directory
         uses: actions/checkout@v4
       - name: mystep3-check the source code
         run: ls -al
       - name: mystep4-check the docker image
         run: docker image build -t shivanipanwar/shivaniimage_nov3:t1 -f Dockerfile .  
+      - name: mystep5-check the docker image 
+        run: docker images
 
