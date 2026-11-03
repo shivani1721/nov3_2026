@@ -22,4 +22,9 @@ jobs:
         run: docker image build -t shivanipanwar/shivaniimage_nov3:t1 -f Dockerfile .  
       - name: mystep5-check the docker image 
         run: docker images
+      - name: mystep6-login to dockerhub
+        uses: docker/login-actions@v3
+        with:
+          username: ${{ secrets. DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
