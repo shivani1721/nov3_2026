@@ -35,5 +35,5 @@ jobs:
           key: ${{ secrets. PRODUCTION_SSH_KEY }}
           script: |
             set -e
-            docker container rm -f prodcont && docker run --name prodcont
-            docker run prodcont -dit --network host shivanipanwar/shivaniimage_nov3:t1
+            docker container rm -f prodcont
+            docker run --name prodcont -dit -p 9092:80 shivanipanwar/shivaniimage_nov3:t1
